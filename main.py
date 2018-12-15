@@ -8,7 +8,7 @@ if __name__ == "__main__":
         try:
             flag = int(input("输入参数："))
         except Exception:
-            print("参数类型错误!\n")
+            print("参数类型错误!")
             time.sleep(0.5)
             continue
         if flag == 0:

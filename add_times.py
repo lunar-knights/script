@@ -4,10 +4,7 @@ import datetime
 import random
 
 
-def add_times():
-    account = "LCBJ09302"
-    password = "hxl123456"
-
+def add_times(account="LCBJ09302", password="hxl123456"):
     times_url = "http://10.7.13.26:9080/times"
     headers1 = {'Content-Type': 'application/x-www-form-urlencoded'}
 

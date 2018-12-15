@@ -1,5 +1,5 @@
-import add_food
-import add_times
+import src.add_food as add_food
+import src.add_times as add_times
 import time
 
 if __name__ == "__main__":

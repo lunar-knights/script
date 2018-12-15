@@ -45,3 +45,5 @@ def add_times(account="LCBJ09302", password="hxl123456"):
     submit_url = times_url + "/times/submittimesfirst"
     data = {"ids[]": item_id}
     print(requests.post(submit_url, data=data, headers=headers2).text)
+
+    return cookies_str, item_id, requests.post(submit_url, data=data, headers=headers2).text

@@ -17,3 +17,4 @@ def add_food(user_id="9302", user_name="何翔龙"):
     }
     res = requests.post(url, data=data, headers=headers1)
     print(res.json())
+    return res.json()

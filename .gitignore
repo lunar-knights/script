@@ -2,4 +2,4 @@
 __pycache__
 *.spec
 dist
-bulid
+build

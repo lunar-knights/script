@@ -4,7 +4,6 @@ import time
 
 if __name__ == "__main__":
     while 1:
-        flag = 0
         print("* 1:填工时\n* 2:填餐票\n* 0:退出")
         try:
             flag = int(input("输入参数："))
@@ -16,7 +15,11 @@ if __name__ == "__main__":
             print("退出中...")
             time.sleep(1)
             break
-        if flag == 1:
-            add_times.add_times()
-        if flag == 2:
-            add_food.add_food()
+        try:
+            if flag == 1:
+                add_times.add_times()
+            if flag == 2:
+                add_food.add_food()
+        except Exception:
+            print("连接或者参数异常!")
+            continue

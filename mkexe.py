@@ -1,7 +1,8 @@
 import os
+
 path = os.path.split(os.path.realpath(__file__))[0]
 
-req_path = path+"/requirements.txt"
+req_path = path + "/requirements.txt"
 
 pkg_ins_cmd = "pip install -r " + req_path
 

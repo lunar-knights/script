@@ -1,6 +1,7 @@
 import requests
 import json
 import datetime
+import time
 
 
 def add_food(user_id="9302", user_name="何翔龙"):
@@ -10,20 +11,24 @@ def add_food(user_id="9302", user_name="何翔龙"):
     file_list = res.json()["files"]
     f_id = ""
     for f in file_list:
-        idx = f["name"].find("10F")
+        idx = f["name"].find("11F")
         if idx >= 0:
             f_id = f["id"]
             break
 
     if f_id == "":
         return "查表错误！"
-
+    
+    id = "18121420250966621720"
+    st = str(int(time.time()))[0:-2]
+    id = id[0:-8] + st
+    
     url = "http://old.chaojibiaoge.com/index.php/System/Model/saveFormData"
     headers1 = {'Content-Type': 'application/x-www-form-urlencoded'}
     data = {
         "need_return_newid": True,
         "tablename": "oa_sheet",
-        "fieldvalues": "SYS_ROWID<=>~|~sort<=>100~|~column_1<=>系统软件部~|~column_2<=>四处~|~column_3<=>"+user_name+"~|~column_4<=>"+user_id+"~|~column_5<=>开发~|~column_6<=>1~|~column_7<=>~|~SYS_string1<=>~|~SYS_string2<=>~|~SYS_string3<=>~|~SYS_EDITTIME<=>~|~SYS_EDITUSER<=>~|~SYS_ADDTIME<=>~|~SYS_ADDUSER<=>~|~SYS_ADDIP<=>~|~DIANZANCOUNT<=>~|~id<=>18121420250971621620~|~projectid<=>"+f_id+"~|~SYS_FORMATE<=>~|~activecell<=>",
+        "fieldvalues": "SYS_ROWID<=>~|~sort<=>100~|~column_1<=>系统软件部~|~column_2<=>四处~|~column_3<=>"+user_name+"~|~column_4<=>"+user_id+"~|~column_5<=>开发~|~column_6<=>1~|~column_7<=>~|~SYS_string1<=>~|~SYS_string2<=>~|~SYS_string3<=>~|~SYS_EDITTIME<=>~|~SYS_EDITUSER<=>~|~SYS_ADDTIME<=>~|~SYS_ADDUSER<=>~|~SYS_ADDIP<=>~|~DIANZANCOUNT<=>~|~id<=>"+id+"~|~projectid<=>"+f_id+"~|~SYS_FORMATE<=>~|~activecell<=>",
         "modelid": "oa_sheet",
         "usermodel_recordid": f_id,
         "user": "3116770262@qq.com",

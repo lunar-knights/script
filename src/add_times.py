@@ -47,3 +47,6 @@ def add_times(account="LCBJ09302", password="hxl123456"):
     print(requests.post(submit_url, data=data, headers=headers2).text)
 
     return cookies_str, item_id, requests.post(submit_url, data=data, headers=headers2).text
+
+if __name__ == "__main__":
+    add_times()

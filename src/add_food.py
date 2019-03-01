@@ -27,7 +27,7 @@ def add_food(user_id="9302", user_name="何翔龙"):
     file_list = res.json()["files"]
     f_id = ""
     for f in file_list:
-        idx = f["name"].find("11F")
+        idx = f["name"].find("12F")
         if idx >= 0:
             f_id = f["id"]
             break

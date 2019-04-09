@@ -1,6 +1,4 @@
 import requests
-import json
-import datetime
 import time
 
 
@@ -53,6 +51,7 @@ def add_food(user_id="9302", user_name="何翔龙"):
     res = requests.post(url, data=data, headers=headers1)
     print(res.json())
     return res.json()
+
 
 if __name__ == "__main__":
     add_food()

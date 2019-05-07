@@ -26,7 +26,7 @@ def add_times(account="LCBJ09302", password="hxl123456"):
         "userid": account,
         "workdate": workdate,
         "firstclass": "CDT工时",
-        "projectid": "680",
+        "projectid": "1061",
         "projectleader": "褚福州",
         "worktime": worktime,
         "memo": "开发"

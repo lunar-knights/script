@@ -1,25 +1,11 @@
-import src.add_food as add_food
-import src.add_times as add_times
+# import src.add_food as add_food
 import time
+import src.add_times as add_times
 
 if __name__ == "__main__":
-    while 1:
-        print("* 1:填工时\n* 2:填餐票\n* 0:退出")
-        try:
-            flag = int(input("输入参数："))
-        except Exception:
-            print("参数类型错误!")
-            time.sleep(0.5)
-            continue
-        if flag == 0:
-            print("退出中...")
-            time.sleep(1)
-            break
-        try:
-            if flag == 1:
-                add_times.add_times()
-            if flag == 2:
-                add_food.add_food()
-        except Exception:
-            print("连接或者参数异常!")
-            continue
+    try:
+        print("开始填写!")
+        print(add_times.add_times())
+    finally:
+        print("5秒后自动退出")
+        time.sleep(5)
